@@ -4,12 +4,12 @@ import numpy as np
 
 
 def generate_exponential(lambda_val, n):
-    generated_list = [random.Random().random() for _ in range(n)]
+    generated_list = [random.uniform(0, 1) for _ in range(n)]
     return -np.log(generated_list) / lambda_val
 
 
 def generate_normal(sigma, a, n):
-    return [sigma * (sum(random.Random().random() for _ in range(12)) - 6) + a for _ in range(n)]
+    return [sigma * (sum(random.uniform(0, 1) for _ in range(12)) - 6) + a for _ in range(n)]
 
 
 def generate_uniform(a, c, n):
